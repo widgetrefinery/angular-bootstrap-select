@@ -180,7 +180,7 @@ function selectpickerDirective($parse, $timeout) {
     priority: 1000,
     link: function (scope, element, attrs) {
       function refresh(newVal) {
-        scope.$applyAsync(function () {
+        scope.$evalAsync(function () {
           if (attrs.ngOptions && /track by/.test(attrs.ngOptions)) element.val(newVal);
           element.selectpicker('refresh');
         });
